@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+/* I made position relative so the bottom background image would stick to the bottom of body, not the screem */
+body {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    font-family: "League Spartan", sans-serif;
+}
+
+/* Background images */
+body::before {
+    content: url(./images/bg-pattern-top-mobile.svg);
+    position: absolute;
+    top: 0rem;
+    z-index: -1;
+}
+
+body::after {
+    content: url(./images/bg-pattern-bottom-mobile.svg);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 9rem;
+    width: 88%;
+}
+
+/* Header */
+.header {
+    margin-bottom: 3.7rem;
+    text-align: center;    
+}
+
+.header h1 {
+    margin-bottom: 2rem;
+
+    font-size: 4rem;
+    line-height: 3.2rem;
+    color: var(--very-dark-magenta);
+}
+
+.header p {
+    font-size: 1.8em;
+    line-height: 2.3rem;
+    color: var(--dark-grayish-magenta);
+}
+
+/* Star review section */
+.star-section {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+.star-review {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: .8rem;
+    padding: 1.4rem;
+
+    background-color: var(--light-grayish-magenta);
+}
+
+.stars {
+    margin-bottom: 1rem;
+}
+
+.stars img {
+    margin-right: .5rem;
+}
+
+.star-review span {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--very-dark-magenta);
+}
+
+.star-review-first,
+.star-review-second {
+    margin-bottom: 1.5rem;
+}
+
+/* Quote Section */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 12rem;
+}
+
+.quote-review {
+    border-radius: .8rem;
+    padding: 3rem 3rem 3rem 3rem;
+
+    background-color: var(--very-dark-magenta);
+}
+
+.quote-review header {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 2.5rem;
+}
+
+.quote-review img {
+    margin-right: 2.1rem;
+    border-radius: 5rem;
+    width: 14%;
+    height: auto;
+}
+
+.quote-review h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.quote-review span {
+    font-size: 1.54rem;
+    color: hsla(333, 80%, 67%, 0.8);
+}
+
+.quote-review p {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+
+    color: var(--white);
+}
+
+.quote-review-first,
+.quote-review-second {
+    margin-bottom: 1.5rem;
+}
+
+
+@media only screen and (min-width: 401px) {
+    /* Switched position back to static for the bottom image */
+    body {
+        position: static;
+    }
+
+    body::before {
+        content: url(./images/bg-pattern-top-desktop.svg);
+        position: absolute;
+        top: 0rem;
+        left: 0rem;
+        z-index: -1;
+    }
+
+    body::after {
+        content: url(./images/bg-pattern-bottom-desktop.svg);
+        position: absolute;
+        bottom: -10rem;
+        right: 0rem;
+        z-index: -1;
+    }
+
+    main {
+        position: absolute;
+
+        margin-top: 10.5rem;
+        width: 108.5rem;
+    }
+
+    /* This div encapsulates the header and the star-section */
+    .desktop-upper-portion {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 7rem;
+        width: 100%;
+    }
+
+    /* Header */
+    .header {
+        margin: 0;
+
+        text-align: left;
+    }
+
+    .header h1 {
+        margin-bottom: 2.5rem;
+        width: 40rem;
+
+        font-size: 5.3rem;
+        line-height: 4.4rem;
+    }
+
+    .header p {
+        width: 45rem;
+
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+
+    /* Star section */
+    .star-section {
+        align-items: flex-end;
+        justify-content: center;
+
+        margin-bottom: 0;
+    }
+
+    .star-review {
+        flex-direction: row;
+
+        padding-top: 1.6rem;
+        padding-left: 2.5rem;
+        padding-bottom: 1.6rem;
+    }
+
+    .star-review-first {
+        margin-right: 10rem;
+        padding-right: 7.5rem;
+    }
+
+    .star-review-second {
+        margin-right: 4.9rem;
+        padding-right: 4.5rem;
+    }
+    
+    .star-review-third {
+        padding-right: 7.2rem;
+    }
+
+    .star-review-first,
+    .star-review-second {
+        margin-bottom: 1.4rem;
+    }
+
+    .stars {
+        margin-right: 1.8rem;
+        margin-bottom: 0;
+    }
+
+    .stars img {
+        width: 13%;
+    }
+
+    /* Quote section */
+    .quote-section {
+        flex-direction: row;
+        align-items: flex-start;
+
+        margin-bottom: 0;
+    }
+
+    .quote-review {
+        border-radius: .9rem;
+        padding: 4rem 2.9rem 3.7rem 3rem;
+    }
+
+    .quote-review img {
+        margin-right: 2rem;
+        width: 14%;
+    }
+
+    .quote-review h2 {
+        font-size: 1.7rem;
+    }
+
+    .quote-review span {
+        font-size: 1.64rem;
+    }
+
+    .quote-review p {
+        width: 28.4rem;
+
+        font-size: 1.65rem;
+    }
+
+    .quote-review-first,
+    .quote-review-second {
+        margin-right: 2.8rem;
+        margin-bottom: 0;
+    }
+
+    .quote-review-second {
+        margin-top: 1.5rem;
+    }
+    .quote-review-third {
+        margin-top: 3rem;
+    }
+}

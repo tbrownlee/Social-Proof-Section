@@ -1,0 +1,1 @@
+For this project, I got better at using and positioning background images. I also learned how to use flex-start and flex-end.
